@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title></title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script>
+			function validate() {
+				var email = document.getElementById("email").value;
+				var pass = document.getElementById("pass").value;
+				var status = true;
+				if (email == "") {
+					document.getElementById("email").style.borderColor = "red";
+					document.getElementById("emailerr").innerHTML = "* Invalid Email";
+					document.getElementById("emailerr").style.color = "red";
+					status = false;
+				}
+				else {
+					document.getElementById("email").style.borderColor = "";
+					document.getElementById("emailerr").innerHTML = "";
+				}
+
+				if (pass == "") {
+					document.getElementById("pass").style.borderColor = "red";
+					document.getElementById("passerr").innerHTML = "* Invalid Password";
+					document.getElementById("passerr").style.color = "red";
+					status = false;
+				}
+				else {
+					document.getElementById("pass").style.borderColor = "";
+					document.getElementById("emailerr").innerHTML = "";
+				}
+				if (status == true && email == "spandana@gmail.com" && pass == "123") {
+					alert("thank you for your registration")
+					window.location.href = "http://127.0.0.1:5500/Page3.html";
+				}
+				else if((email != "" && pass !="") && (email != "spandana@gmail.com" && pass != "123")) {
+					window.location.href = "http://127.0.0.1:5500/Page4.html";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4" style="background-color:black; padding-bottom: 10px;"><br><br>
+					<div id="myForm">
+						<input type="email" style="color: green" class="form-control" id="email" placeholder="enter Email">
+						<span id="emailerr"></span>
+						<br>
+						<input type="password" style="color: green" class="form-control" id="pass"
+							placeholder="enter Password">
+						<span id="passerr"></span>
+						<br>
+						<button class="btn btn-success" onclick="validate()">Submit</button>
+						<div style="display: inline-block; float: right;">
+							<img src="1.png" alt="Cinque Terre">
+							<label class="text-bottomleft" style="color: white;">Token Sathi</label>
+						</div>
+					</div>
+					<div class="col-sm-4"></div>
+				</div>
+				<hr>
+			</div>
+		</div>
+	</body>
+</html>
